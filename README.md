@@ -18,21 +18,6 @@ AI skill for batch URL text extraction with automatic link discovery. Paste a UR
 
 ## Install
 
-### Skills CLI (Recommended)
-
-```bash
-npx @dev-devsuccess/skills add dev-devsuccess/skills --skill txtext
-```
-
-Restart your IDE. Type `/txtext` in any chat to invoke.
-
-To update later:
-```bash
-npx @dev-devsuccess/skills update
-```
-
----
-
 ### Manual (from source)
 
 **Claude Code:**
