@@ -1,0 +1,44 @@
+name: Validate Skill
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'SKILL.md' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'SKILL.md' ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check frontmatter fields
+        run: |
+          if ! grep -q "^name:" SKILL.md; then
+            echo "ERROR: Missing 'name' field in SKILL.md frontmatter"
+            exit 1
+          fi
+          if ! grep -q "^description:" SKILL.md; then
+            echo "ERROR: Missing 'description' field in SKILL.md frontmatter"
+            exit 1
+          fi
+          echo "Frontmatter fields valid"
+
+      - name: Scan for credential patterns
+        run: |
+          if grep -E '(api_key|API_KEY|secret|SECRET|password|PASSWORD|token|TOKEN|bearer|BEARER)[[:space:]]*[=:][[:space:]]*["'"'"']?[a-zA-Z0-9]{16,}' SKILL.md; then
+            echo "WARNING: Potential credential pattern detected in SKILL.md"
+            exit 1
+          fi
+          echo "No credential patterns detected"
+
+      - name: Validate Markdown
+        run: |
+          if ! command -v markdownlint &> /dev/null; then
+            echo "markdownlint not installed; skipping"
+          else
+            markdownlint SKILL.md || echo "Markdown lint warnings (non-blocking)"
+          fi
+          echo "Markdown syntax check complete"

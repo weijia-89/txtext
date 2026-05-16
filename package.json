@@ -1,0 +1,25 @@
+{
+  "name": "txtext",
+  "version": "1.0.0",
+  "description": "Quick-access command for batch URL text extraction. Automatically discovers and follows links on index/tutorial pages. Uses curl + Python natively; Playwright-MCP for JS-heavy content as second-to-last resort.",
+  "main": "SKILL.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weijia-89/txtext.git"
+  },
+  "keywords": [
+    "skill",
+    "claude",
+    "agent",
+    "text-extraction",
+    "url",
+    "web-scraping",
+    "documentation"
+  ],
+  "author": "Wei Jia",
+  "bugs": {
+    "url": "https://github.com/weijia-89/txtext/issues"
+  },
+  "homepage": "https://github.com/weijia-89/txtext#readme",
+  "license": "MIT"
+}

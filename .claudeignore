@@ -1,0 +1,72 @@
+# .cursorignore — Reduce context bloat, save tokens
+# Place at project root
+
+# Dependencies & package managers
+node_modules/
+vendor/
+.pnp.*
+bower_components/
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+.nuxt/
+.turbo/
+target/
+
+# Lock files (massive token sinks)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Gemfile.lock
+poetry.lock
+Cargo.lock
+composer.lock
+
+# Generated code
+*.min.js
+*.min.css
+*.map
+*.bundle.*
+__generated__/
+.graphql-generated/
+
+# Binary & media
+*.png
+*.jpg
+*.gif
+*.ico
+*.woff*
+*.ttf
+*.eot
+*.mp4
+*.zip
+*.tar.gz
+*.pdf
+
+# Environment & secrets
+.env*
+*.pem
+*.key
+
+# IDE & OS
+.git/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Test artifacts
+coverage/
+.nyc_output/
+__snapshots__/
+*.test.js.snap
+
+# Large data
+*.csv
+*.sql
+*.sqlite
+fixtures/
+seed/
