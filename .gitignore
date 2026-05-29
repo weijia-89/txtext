@@ -1,0 +1,38 @@
+# Extracted content folders
+*-docs/
+extracted-*/
+content-*/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.backup
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node modules (if package.json used)
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Git
+.git/
+
+# Local-only
+localonly/
+PR_DRAFT.md
+
+# CI/CD
+.github/workflows/*.log
